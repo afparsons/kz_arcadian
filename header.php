@@ -43,6 +43,8 @@ Otherwise, comments are NOT to be removed regardless of how excessive they may s
     <?php wp_head(); ?>
 
     <!-- TODO: Google Fonts, Typekit, FontAwesome, etc. (see KZ Index) -->
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Catamaran:300,400,700,800|Cormorant+Garamond:300i,400,400i,700i|Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amiri:400,400i" rel="stylesheet">
   </head>
 
   <!-- TODO: class and id name conventions
@@ -124,8 +126,8 @@ Confer: https://stackoverflow.com/questions/4059163/css-language-speak-container
           </div>
         </div>
         <!-- SUPERFLUOUS? </div> -->
-        <div class="center-items"><a class="header-logo" href="http://www.thekzooindex.com">The Index</a></div>
-          <div class="right-items">
+        <div class="top-bar_center-items"><a class="header-logo" href="http://www.thekzooindex.com">The Index</a></div>
+          <div class="top-bar_right-items">
             <a href="#ult-fs-search"><i class="fa fa-search" aria-hidden="true"></i></a>
           </div>
       </div>

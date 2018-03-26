@@ -12,3 +12,124 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-rea
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+
+/* === Header === */
+
+.top-bar {
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+}
+.top-bar_left-items, .top-bar_center-items, .top-bar_right-items {
+  box-sizing: border-box;
+  display: block; font-family: Catamaran;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #141414;
+}
+.top-bar_left-items{
+  float: left;
+  padding: 15px 0 10px 5%;
+}
+.top-bar_center-items {
+  text-align: center;
+  position: absolute;
+  float: left;
+  padding-top: 15px;
+  margin-left: 17.5%;
+  margin-right: 17.5%;
+  width: 65%;
+  font-size: 14px;
+  opacity: 0.8; z-index: 0;
+}
+.top-bar_right-items {
+  float: right;
+  padding: 15px 5% 10px 0;
+  font-size: 14px; position: absolute;
+  z-index: 1;
+  right: 0;
+}
+.top-bar_right-items_item {
+  float: left;
+  padding-right: 20px;
+}
+.top-bar_right-items_item a:hover {
+  color: #ababab;
+}
+a i:hover {
+  color: #ababab;
+}
+a.slogan:hover, a.location:hover {
+  color: #EA6820;
+}
+a.location:hover {
+  color: #ababab;
+}
+header.header-wrapper {
+  border-bottom: none;
+}
+
+
+
+/* === Structure === */
+
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+/* Body */
+body {
+  background: none;
+  font-family: 'georgia', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.fullbg .custom-background {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/***** Footer *****/
+
+footer {
+  background: #fff;
+  border-top: 4px solid #ababab;
+  color: #2a2a2a;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+footer a {
+  color: #2a2a2a;
+}
+
+footer.row.clearfix {
+  width: 100%;
+}
+.copyright-wrapper {
+  background: none;
+}
+.copyright {
+  color: #2a2a2a;
+  font-family: Catamaran, helvetica, open sans;
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
+}
+.copyright a {
+  color: #2a2a2a;
+}
