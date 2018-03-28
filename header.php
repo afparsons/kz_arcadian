@@ -90,7 +90,12 @@ Confer: https://stackoverflow.com/questions/4059163/css-language-speak-container
       <div class="main-menu">
         <!-- TODO: why is this clearfix?-->
         <nav class="main-nav clearfix">
-    	<?php wp_nav_menu(array('theme_location' => 'main_nav')); ?></nav>
+    	<?php wp_nav_menu(array(
+              'theme_location' => 'main_nav',
+              'menu_class' => 'main_nav'
+              // is it dangerous/confusing to name the menu_class "main_nav" ?
+              // stylize menu items via wp_get_nav_menu_items() ?
+            )); ?></nav>
     	</div>
 
       <!-- SIDE-NAVIGATION-MENU provides site navigation functionality.
