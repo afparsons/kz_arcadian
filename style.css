@@ -13,6 +13,33 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/* === Structure === */
+
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+/* Body */
+body {
+  background: none;
+  font-family: 'georgia', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.fullbg .custom-background {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* === Header === */
 
@@ -70,41 +97,75 @@ header.header-wrapper {
   border-bottom: none;
 }
 
+/* === MENU === */
 
-
-/* === Structure === */
-
-html {
-  font-size: 100%;
-  -ms-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
+#site-navigation {
+  display: block;
+  background: #000;
+  height: 48px;
 }
 
-/* Body */
-body {
-  background: none;
-  font-family: 'georgia', Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  word-wrap: break-word;
+#site-navigation #main-menu,
+#site-navigation > input {
+  display: none;
 }
-.fullbg .custom-background {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
+#site-navigation > label {
+  display: block;
+  font-size: 36px;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  width: 36px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+
+#site-navigation > input:checked + #main-menu {
+  display: block;
+  clear: both;
+  top: 36px;
+  position: relative;
+  background: #000;
+  color: #fff;
+}
+
+#site-navigation ul li {
+  display: block;
+  padding: 12px 10px;
+}
+
+#site-navigation a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media only screen and (min-device-width: 768px) {
+  #site-navigation {
+    height: auto;
+  }
+  #site-navigation #main-menu {
+    display: block;
+  }
+  #site-navigation > label {
+    display: none
+  }
+  #site-navigation ul li {
+    display: inline-block;
+  }
 }
 
 /***** Footer *****/
 
 footer {
   background: #fff;
-  border-top: 4px solid #ababab;
+  border-top: 1px dashed #ebebeb;
   color: #2a2a2a;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -121,15 +182,61 @@ footer.row.clearfix {
 }
 .copyright-wrapper {
   background: none;
+  border-top: 1px dashed #ebebeb;
 }
 .copyright {
-  color: #2a2a2a;
   font-family: Catamaran, helvetica, open sans;
-  font-size: 12px;
-  font-size: 0.75rem;
-  padding: 10px 15px;
-  padding: 0.625rem 0.9375rem;
+  font-size: 14px;
+  color: #2a2a2a;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding: 15px 0 15px 0;
+  margin-left: 2%;
+  float: left;
 }
 .copyright a {
+  /* is this needed? */
   color: #2a2a2a;
 }
+
+.copyright a:hover, .site-credit a:hover {
+  color: #ababab;
+}
+
+.site-credit {
+  font-family: Catamaran;
+  font-size: 14px;
+  float: right;
+  margin: 15px 2% 0 0;
+}
+
+/* leftover from CUSTOM CSS */
+.col-1-1.mq-footer, .col-1-2.mq-footer, .col-1-3.mq-footer {
+  width: 30.667%; padding: 0;
+}
+.col-1-1.mq-footer, .col-1-2.mq-footer, .col-1-3.mq-footer {
+  margin-left: 2%;
+}
+.col-1-4.mq-footer {
+  width: 96%; margin-left: 2%; margin-right: 2%;
+}
+.footer-widget.footer-4 {
+  margin-bottom: 0;
+}
+
+.bottom-menu { display: flex; align-items: center; justify-content: center; font-family: Catamaran; font-size: 16px; color: #333; text-transform: uppercase; font-weight: 600; }
+a.footer-menu { box-sizing: border-box; padding: 0 15px; }
+
+
+/* === WIDGETS === */
+
+.widget-title, .footer-widget-title { margin-bottom: 20px; margin-bottom: 1.25rem; }
+.footer-widget-title { color: #2a2a2a; }
+.widget-title { font-family: Catamaran, helvetica, open sans; text-align: center; border-bottom: 1px solid #DBDBDB; padding-bottom: 3px; }
+.footer-widget-title { font-family: Catamaran, helvetica, open sans; border-bottom: 3px solid #575B5F; padding-bottom: 3px; }
+.sb-widget, .footer-widget { font-color: #2a2a2a; margin-bottom: 20px; margin-bottom: 1.25rem; overflow: hidden; }
+
+.footer-widget .cp-wrap { padding: 5px 0px; padding: 0.3125rem 0rem; border-bottom: 1px solid #454545; }
+.sb-widget .menu-item:first-child, .sb-widget .cat-item:first-child, .footer-widget .menu-item:first-child, .footer-widget .cat-item:first-child { padding-top: 0; }
+.sb-widget .menu-item, .sb-widget .cat-item, .footer-widget .menu-item, .footer-widget .cat-item { line-height: 1.3; }
+.footer-widget .tagcloud a { background: #000; }

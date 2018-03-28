@@ -16,10 +16,6 @@ little experience with HTML, PHP, and JS. As such, comments are explicit and exc
 Future maintainers should only modify comments for clarity.
 Comments are only to be removed in cases where false information is provided.
 Otherwise, comments are NOT to be removed regardless of how excessive they may seem.
-
-# Read: bloginfo() on Wordpress Codex.
-# Read:
-# Read:
 -->
 
 <html>
@@ -41,10 +37,6 @@ Otherwise, comments are NOT to be removed regardless of how excessive they may s
 
     <!-- PHP function (required). -->
     <?php wp_head(); ?>
-
-    <!-- TODO: Google Fonts, Typekit, FontAwesome, etc. (see KZ Index) -->
-    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Catamaran:300,400,700,800|Cormorant+Garamond:300i,400,400i,700i|Source+Serif+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amiri:400,400i" rel="stylesheet">
   </head>
 
   <!-- TODO: class and id name conventions
@@ -104,33 +96,52 @@ Confer: https://stackoverflow.com/questions/4059163/css-language-speak-container
       <!-- SIDE-NAVIGATION-MENU provides site navigation functionality.
       (1) sticky: fixed to top on scroll, nav menu under "hamburger" bars icon.
       (2) mobile: fixed to top on scroll, nav menu under "hamburger" bars icon.-->
-      <div class="side-navigation">
+      <!-- <div class="side-navigation">
         <!-- SUPERFLUOUS?
 
         <div class="left-items-2">
 
-        -->
+
         <div class="side-navigation_dropdown-menu">
           <!-- icon for side menu. showDropdownMenu() displays menu on click. -->
+
+          <!--
+
           <i class="side-navigation_dropdown-menu_icon" onclick="showDropdownMenu()" aria-hidden="true"></i>
           <div id="id_dropdown-menu" class="side-navigation_dropdown-menu_content">
+
+
             <!-- populates dropdown-menu -->
-            <?php wp_nav_menu(array('theme_location' => 'main_nav')); ?>
+
+            <!--
+
+            <?php wp_nav_menu(array(
+                    'theme_location' => 'main_nav',
+                    'items_wrap' => '<label for="toggle-mobile-menu" aria-label="Menu">&#9776;</label><input id="toggle-mobile-menu" type="checkbox" /><ul id="%1$s" class="%2$s">%3$s</ul>'
+                  )); ?>
+
+                -->
 
             <!-- TODO: review usage of side-navigation-dropdown-menu-copyright -->
             <!-- <p class="side-navigation_dropdown-menu_copyright"> -->
             <!-- copyright symbol -->
+
+            <!--
             <p class="c-symbol">&copy;</p>
 
             <a class="side-navigation_dropdown-menu_site-name" href="http://www.thekzooindex.com/about/">The Index</a></p>
           </div>
         </div>
         <!-- SUPERFLUOUS? </div> -->
-        <div class="top-bar_center-items"><a class="header-logo" href="http://www.thekzooindex.com">The Index</a></div>
+
+
+        <!-- <div class="top-bar_center-items"><a class="header-logo" href="http://www.thekzooindex.com">The Index</a></div>
           <div class="top-bar_right-items">
             <a href="#ult-fs-search"><i class="fa fa-search" aria-hidden="true"></i></a>
           </div>
       </div>
+
+    -->
 
       <!-- JAVASCRIPT controls functionality of side-navigation_dropdown-menu
       TODO: Perhaps move all JS to scripts file...?

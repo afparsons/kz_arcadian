@@ -1,5 +1,9 @@
     <footer>
-      <p>Footer Lorem Ipsum</p>
+      <?php if (is_active_sidebar('footer')) { ?>
+         <div class="col-1-4 mq-footer">
+            <?php dynamic_sidebar('footer'); ?>
+         </div>
+    <?php } ?>
     </footer>
 
     <div class="copyright-wrapper">
