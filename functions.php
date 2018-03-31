@@ -83,7 +83,7 @@ function kz_arcadian_widgets_init() {
 	) );
 
   register_sidebar(array(
-    'name' => 'Footer', 
+    'name' => 'Footer',
     'id' => 'footer',
     'description' => 'Widget area in footer',
     'before_widget' => '<div class="footer-widget footer">',
@@ -184,7 +184,7 @@ function the_index_header_logo() {
 
 /***** Subheading on Posts *****/
 
-function mh_subheading() {
+function kz_arcadian_subheading() {
 	global $post;
 	if (get_post_meta($post->ID, "mh-subheading", true)) {
 		echo '<div class="subheading-top"></div>' . "\n";
@@ -192,6 +192,40 @@ function mh_subheading() {
 	}
 }
 add_action('mh_post_header', 'mh_subheading');
+
+/***** Pagination *****/
+
+function kz_arcadian_pagination() {
+	global $wp_query;
+    $big = 9999;
+	echo paginate_links(array(
+    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+    'format' => '?paged=%#%',
+    'current' => max(1, get_query_var('paged')),
+    'prev_next' => true,
+    'prev_text' => __('&laquo;', 'kz_arcadian'),
+    'next_text' => __('&raquo;', 'kz_arcadian'),
+    'total' => $wp_query->max_num_pages
+  ));
+}
+
+function kz_arcadian_posts_pagination($content) {
+	if (is_singular() && is_main_query()) {
+		$content .= wp_link_pages(array(
+      'before' => '<div class="pagination">',
+      'after' => '</div>',
+      'link_before' => '<span class="pagelink">',
+      'link_after' => '</span>',
+      'nextpagelink' => __('&raquo;', 'mh-magazine-lite'),
+      'previouspagelink' => __('&laquo;', 'kz_arcadian'),
+      'pagelink' => '%',
+      'echo' => 0
+    ));
+	}
+	return $content;
+}
+add_filter('the_content', 'kz_arcadian_posts_pagination', 1);
+
 
 
 /* === Extras === */
